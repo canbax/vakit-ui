@@ -1,47 +1,113 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+import Link from './components/Link.vue'
+
+const currentLanguage = ref('tr')
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <v-app>
+    <v-card title="Namaz Vakti API (1.1.0)" :subtitle="$t('shortSummary')">
+      <template #prepend>
+        <v-img :width="50" aspect-ratio="1/1" src="/src/assets/logo.png"></v-img>
+      </template>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+      <template #append>
+        <v-radio-group v-model="currentLanguage" inline>
+          <v-radio value="tr">
+            <template v-slot:label>
+              <div>Türkçe 🇹🇷</div>
+            </template>
+          </v-radio>
+          <v-radio value="en">
+            <template v-slot:label>
+              <div>English 🇬🇧</div>
+            </template>
+          </v-radio>
+        </v-radio-group>
+      </template>
+      <v-card-item>
+        {{ $t('freeAdFree') }}
+        <a target="_blank" href="https://github.com/canbax/namaz-vakti-api">
+          {{ $t('openSource') }}
+          <v-icon icon="mdi-github"></v-icon>
+        </a>
+        <a target="_blank" href="https://github.com/canbax/namaz-vakti"> namaz-vakti </a>
+        {{ $t('builtForApp') }}
 
-  <main>
-    <TheWelcome />
-  </main>
+        <br />
+        <a
+          target="_blank"
+          href="https://www.postman.com/canbax/workspace/namaz-vakti-api/api/bf039fea-6768-490b-b11d-11bb031bdd8a"
+        >
+          <h2>{{ $t('postmanApiDefinition') }}</h2>
+        </a>
+
+        <v-card :title="$t('usage')">
+          <v-card-item>
+            <br />
+            <span>Koordinatlardan vakit verileri: </span>
+            <a
+              target="_blank"
+              href="/api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey"
+            >
+              /api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey
+            </a>
+            <br />
+            <span>Mahalden vakit verileri: </span>
+            <a
+              target="_blank"
+              href="/api/timesFromPlace?country=Turkey&region=Ankara&city=Ankara&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey"
+            >
+              /api/timesFromPlace?country=Turkey&amp;region=Ankara&city=Ankara&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey
+            </a>
+            <br />
+            <span>Ülkelerin listesi: </span>
+            <a target="_blank" href="/api/countries"> /api/countries </a>
+            <br />
+            <span>Şehirlerin/Eyaletlerin listesi: </span>
+            <a target="_blank" href="/api/regions?country=Germany">
+              /api/regions?country=Germany
+            </a>
+            <br />
+            <span>İlçelerin/Bölgelerin listesi: </span>
+            <a target="_blank" href="/api/cities?country=Germany&region=Bayern">
+              <span>/api/cities?country=Germany&amp;region=Bayern</span>
+            </a>
+            <br />
+            <span>Koordinatını bul: </span>
+            <a target="_blank" href="/api/coordinates?country=Turkey&region=Ankara&city=Ankara">
+              <span>/api/coordinates?country=Turkey&amp;region=Ankara&city=Ankara</span>
+            </a>
+            <br />
+            <span>Koordinatlardan yer bul: </span>
+            <a target="_blank" href="/api/place?lat=39.91987&lng=32.85427">
+              <span>/api/place?lat=39.91987&lng=32.85427</span>
+            </a>
+            <br />
+            <span>IP adresi: </span>
+            <a target="_blank" href="/api/ip"> /api/ip </a>
+          </v-card-item>
+        </v-card>
+
+        <br />
+        <h2>Bağış</h2>
+        Namaz Vakti API ile ücretsiz, reklamsız ancak yüksek kalitede bir hizmet sunmaya
+        çalışıyoruz. Sunucu masrafları, zaman, emek harcıyoruz. Yapacağınız 1 liralık bir bağış bile
+        aşk, şevk ve motivasyon doğurarak bu hizmetlerimizin devamlılığına ve daha iyi olmasına
+        katkı sağlayacaktır.
+
+        <br /><br />
+        Yusuf Sait Canbaz
+        <br />
+        Ziraat Bankası TR53 0001 0090 1024 9249 7050 01
+      </v-card-item>
+    </v-card>
+    <v-footer>
+      This site or product includes IP2Location LITE data available from
+      <a href="https://lite.ip2location.com">https://lite.ip2location.com</a>
+    </v-footer>
+  </v-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style scoped></style>
