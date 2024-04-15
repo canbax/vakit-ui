@@ -1,8 +1,32 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Link from './components/Link.vue'
+import EndPoint from './components/EndPoint.vue'
+import type { RequestParameter } from '@/types'
 
 const currentLanguage = ref('tr')
+const timesFromCoordinatesParams: RequestParameter[] = [
+  { name: 'lat', explanation: 'Latitude', isRequired: true },
+  { name: 'lng', explanation: 'Longitude', isRequired: true },
+  { name: 'date', explanation: 'Date', isRequired: false, defaultValue: 'Today' },
+  {
+    name: 'days',
+    explanation: 'Number of days for calculation',
+    isRequired: false,
+    defaultValue: '100'
+  },
+  {
+    name: 'timezoneOffset',
+    explanation: 'timezone offset in minutes',
+    isRequired: false,
+    defaultValue: '0'
+  },
+  {
+    name: 'calculationMethod',
+    explanation: 'Method of calculation',
+    isRequired: false,
+    defaultValue: 'Turkey'
+  }
+]
 </script>
 
 <template>
@@ -13,7 +37,7 @@ const currentLanguage = ref('tr')
       </template>
 
       <template #append>
-        <v-radio-group v-model="currentLanguage" inline>
+        <v-radio-group v-model="currentLanguage" inline class="d-flex align-center">
           <v-radio value="tr">
             <template v-slot:label>
               <div>Türkçe 🇹🇷</div>
@@ -25,32 +49,31 @@ const currentLanguage = ref('tr')
             </template>
           </v-radio>
         </v-radio-group>
+        <a target="_blank" href="https://github.com/canbax/namaz-vakti-api">
+          <v-icon icon="mdi-github"> </v-icon>
+          {{ $t('openSource') }}
+        </a>
       </template>
       <v-card-item>
         {{ $t('freeAdFree') }}
-        <a target="_blank" href="https://github.com/canbax/namaz-vakti-api">
-          {{ $t('openSource') }}
-          <v-icon icon="mdi-github"></v-icon>
-        </a>
         <a target="_blank" href="https://github.com/canbax/namaz-vakti"> namaz-vakti </a>
         {{ $t('builtForApp') }}
-
-        <br />
         <a
           target="_blank"
           href="https://www.postman.com/canbax/workspace/namaz-vakti-api/api/bf039fea-6768-490b-b11d-11bb031bdd8a"
         >
-          <h2>{{ $t('postmanApiDefinition') }}</h2>
+          {{ $t('postmanApiDefinition') }}
         </a>
 
         <v-card :title="$t('usage')">
           <v-card-item>
-            <br />
-            <span>Koordinatlardan vakit verileri: </span>
-            <a
-              target="_blank"
-              href="/api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey"
-            >
+            <EndPoint
+              title="Koordinatlardan vakit verileri"
+              explanation="GPS coordinatlarından vakti hesaplar"
+              link="/api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey"
+              :parameters="timesFromCoordinatesParams"
+            />
+            <a target="_blank" href="">
               /api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey
             </a>
             <br />

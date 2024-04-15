@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import type { RequestParameter } from '@/types'
+
 interface Props {
   title: string
   explanation: string
-  parameters: { name: string; defaultValue: string; explanation: string; isRequired: boolean }[]
+  parameters: RequestParameter[]
   link: string
 }
 
@@ -11,12 +13,16 @@ defineProps<Props>()
 
 <template>
   <div>
-    <h2>{{ title }}</h2>
-    <p>{{ explanation }}</p>
-    <h3>Parameters:</h3>
-    <ul>
-      <li v-for="(value, key) in parameters" :key="key">{{ key }}: {{ value }}</li>
-    </ul>
-    <a :href="link">API Endpoint</a>
+    <span class="text-h6">{{ title }}</span>
+    <p class="text-subtitle-1">{{ explanation }}</p>
+    <a :href="link">{{ link }}</a>
+    <v-list title="Parameters">
+      <v-list-item
+        v-for="(value, key) in parameters"
+        :key="key"
+        :title="value.name"
+        :subtitle="value.explanation"
+      ></v-list-item>
+    </v-list>
   </div>
 </template>
