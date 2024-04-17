@@ -13,8 +13,7 @@ withDefaults(defineProps<Props>(), { isOpenNewTab: true })
   <v-btn
     :href="link"
     :target="isOpenNewTab ? '_blank' : ''"
-    variant="text"
-    color="primary"
+    size="large"
     :append-icon="appendIcon"
     class="text-none"
   >

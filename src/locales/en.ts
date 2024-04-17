@@ -1,8 +1,13 @@
 export const en = {
-  shortSummary: 'Diyanetin yöntemini kullanarak namaz vakti verileri sunar.',
+  shortSummary: 'Serves prayer times data.',
   freeAdFree: 'Ücretsiz, reklamsız,',
-  openSource: 'açık kaynak kodlu',
+  openSource: 'Open-source',
+  openSourceExplanation: 'MIT license',
   builtForApp: 'uygulaması için oluşturulmuştur.',
   postmanApiDefinition: 'Postman API tanımlarına göz atabilirsiniz.',
-  usage: 'API Usage'
+  usage: 'API Usage',
+  main: '🕌',
+  docs: 'Documentation',
+  support: 'Support',
+  blog: 'Blog'
 }

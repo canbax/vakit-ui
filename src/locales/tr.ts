@@ -1,8 +1,13 @@
 export const tr = {
-  shortSummary: 'Diyanetin yöntemini kullanarak namaz vakti verileri sunar.',
-  freeAdFree: 'Ücretsiz, reklamsız,',
-  openSource: 'açık kaynak kodlu',
+  shortSummary: 'Namaz vakti verileri sunar.',
+  freeAdFree: 'Ücretsiz ve Reklamsız,',
+  openSource: 'Açık Kaynak',
+  openSourceExplanation: 'MIT Lisanslı',
   builtForApp: 'uygulaması için oluşturulmuştur',
   postmanApiDefinition: 'Postman API tanımlarına göz atabilirsiniz.',
-  usage: 'API Kullanımı'
+  usage: 'API Kullanımı',
+  main: '🕌',
+  docs: 'Dokümentasyon',
+  support: 'Destek',
+  blog: 'Blog'
 }

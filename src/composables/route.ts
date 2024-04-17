@@ -17,7 +17,7 @@ export function useRoute(): RouteManager {
     support: SupportPage,
     blog: BlogPage
   }
-  const pathMenuItems: readonly string[] = ['main', 'docs', 'support', 'blog'] as const
+  const pathMenuItems: readonly string[] = ['main', 'docs', 'support'] as const
 
   const currentView = shallowRef(null)
   const currentPathMenuItem = shallowRef<string | null>(null)
@@ -31,10 +31,7 @@ export function useRoute(): RouteManager {
   )
 
   function setViewFromRoutePath(path: string) {
-    console.log('set view from: ', path)
-
     const pageToGo = routePathToVueComponent[path]
-    console.log('page to go: ', pageToGo)
     if (!pageToGo) {
       currentView.value = NotFoundPage
       currentPathMenuItem.value = null
