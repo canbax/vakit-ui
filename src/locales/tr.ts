@@ -8,6 +8,6 @@ export const tr = {
   usage: 'API Kullanımı',
   main: '🕌',
   docs: 'Dokümentasyon',
-  support: 'Destek',
+  support: 'Bağış Yap',
   blog: 'Blog'
 }

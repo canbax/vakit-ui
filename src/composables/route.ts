@@ -7,6 +7,9 @@ import NotFoundPage from '@/pages/NotFoundPage.vue'
 import BlogPage from '@/pages/BlogPage.vue'
 import type { RouteManager } from '@/types'
 
+const currentView = shallowRef(null)
+const currentPathMenuItem = shallowRef<string | null>(null)
+
 export function useRoute(): RouteManager {
   const location = useBrowserLocation()
   const routePathToVueComponent: Record<string, any> = {
@@ -18,9 +21,6 @@ export function useRoute(): RouteManager {
     blog: BlogPage
   }
   const pathMenuItems: readonly string[] = ['main', 'docs', 'support'] as const
-
-  const currentView = shallowRef(null)
-  const currentPathMenuItem = shallowRef<string | null>(null)
 
   watch(
     location,
@@ -35,13 +35,21 @@ export function useRoute(): RouteManager {
     if (!pageToGo) {
       currentView.value = NotFoundPage
       currentPathMenuItem.value = null
+      console.log('currentPathMenuItem.value = null')
     } else {
       currentView.value = pageToGo
       currentPathMenuItem.value = path
+      console.log('currentPathMenuItem.value = path', path)
     }
   }
 
   function setViewFromPathMenuItem(item: string) {
+    console.log('set view from path menu item: ', item)
+    if (item === 'main') {
+      history.pushState({}, '', '/')
+    } else {
+      history.pushState({}, '', '/' + item)
+    }
     setViewFromRoutePath(item) // title is also route path
   }
 

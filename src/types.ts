@@ -1,4 +1,4 @@
-import type { ShallowRef } from 'vue'
+import type { Ref } from 'vue'
 
 export interface RequestParameter {
   name: string
@@ -9,7 +9,7 @@ export interface RequestParameter {
 
 export interface RouteManager {
   readonly currentView: any
-  readonly currentPathMenuItem: ShallowRef<string | null>
+  readonly currentPathMenuItem: Ref<string | null>
   pathMenuItems: readonly string[]
   setViewFromPathMenuItem: (item: string) => void
 }
