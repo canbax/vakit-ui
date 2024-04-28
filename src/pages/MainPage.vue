@@ -32,8 +32,8 @@ function openGithub() {
       <v-card
         class="ma-2 pa-2"
         prepend-icon="mdi-currency-usd-off"
-        :subtitle="'Ücretsiz ve limitsiz kullanım'"
-        :title="'Ücretsiz'"
+        :subtitle="$t('freeAndLimitlessUsage')"
+        :title="$t('free')"
       >
         <v-card-actions>
           <v-btn
@@ -49,8 +49,8 @@ function openGithub() {
       <v-card
         class="ma-2 pa-2"
         prepend-icon="mdi-advertisements-off"
-        :subtitle="$t('openSourceExplanation')"
-        :title="'Reklamsız'"
+        :subtitle="$t('adFreeExplanation')"
+        :title="$t('adFree')"
       >
         <v-card-actions>
           <v-btn
