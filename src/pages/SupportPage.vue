@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="text-center">
-    <h1>Support</h1>
-  </div>
+  <v-card class="ma-2"> {{ $t('supportPageText') }} </v-card>
 </template>
 
 <style scoped></style>

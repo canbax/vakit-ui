@@ -5,7 +5,7 @@ export const tr = {
   default: 'Varsayılan',
   adFree: 'Reklamsız',
   freeAndLimitlessUsage: 'Ücretsiz ve limitsiz kullanım',
-  adFreeExplanation: 'Herhangi bir reklam veya veri toplama olmadan',
+  adFreeExplanation: 'Herhangi bir reklam, izleyici veya veri toplama olmadan',
   openSource: 'Açık Kaynak',
   openSourceExplanation: 'MIT Lisanslı',
   builtForApp: 'uygulaması için oluşturulmuştur',
@@ -30,14 +30,19 @@ export const tr = {
   place_title: 'Mahal',
   place_explanation: 'Girilen koordinatlara en yakın mahali verir',
   dateParam_explanation: 'YYYY-AA-GG örüntüsünde bir tarih',
-  daysParam_explanation: '1, 1000 aralığında bir tam sayı',
+  daysParam_explanation: '[1, 1000] aralığında bir tam sayı',
   timezoneOffsetParam_explanation:
-    'UTC (Eşgüdümlü Evrensel Zaman) saat dilimine göre kaç dakika fark olduğunu ifade eder',
+    'UTC (Eşgüdümlü Evrensel Zaman) saat dilimine göre kaç dakika fark olduğunu ifade eder. Sıfır, negatif ya da pozitif bir tamsayı olmalıdır',
   calculationMethodParam_explanation:
-    'Güneşin doğum ve batımının hangi açıda olduğu konusunda farklı görüşler mevcuttur. Listelenlerden biri seçilebilir: "Turkey", "MuslimWorldLeague", "Egyptian", "Karachi", "UmmAlQura", "Dubai", "MoonsightingCommittee", "NorthAmerica", "Kuwait", "Qatar", "Singapore", "Tehran", "Other"',
-  countryParam_explanation: 'Ülkenin İnglizce ismi',
+    'Güneşin doğum ve batımının hangi açıda olduğu konusunda farklı görüşler mevcuttur. Listeden biri seçilebilir: "Turkey", "MuslimWorldLeague", "Egyptian", "Karachi", "UmmAlQura", "Dubai", "MoonsightingCommittee", "NorthAmerica", "Kuwait", "Qatar", "Singapore", "Tehran", "Other"',
+  countryParam_explanation: 'Ülkenin İngilizce ismi',
   regionParam_explanation: 'Eyalet, il ya da bölge',
   cityParam_explanation: 'İl, ilçe ya da alt bölge',
-  example: 'Örnek: ',
-  parameters: 'Parametreler'
+  latitudeParam_explanation: 'Enlem (latitude)',
+  longitudeParam_explanation: 'Boylam (longitude)',
+  dateParam_default: 'Bugün',
+  example: 'Örnekler: ',
+  parameters: 'Parametreler',
+  supportPageText:
+    'Namaz Vakti API ile ücretsiz, reklamsız ancak yüksek kalitede bir hizmet sunmaya çalışıyoruz. Sunucu masrafları, zaman, emek harcıyoruz. Yapacağınız 1 liralık bir bağış bile aşk, şevk ve motivasyon doğurarak bu hizmetlerimizin devamlılığına ve daha iyi olmasına katkı sağlayacaktır.'
 }

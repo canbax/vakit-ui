@@ -5,7 +5,7 @@ export interface Props {
   title: string
   explanation: string
   parameters: RequestParameter[]
-  link: string
+  links: string[]
   id: string
 }
 
@@ -17,9 +17,13 @@ defineProps<Props>()
     <span class="text-h4">{{ title }}</span>
     <p class="text-subtitle-1">{{ explanation }}</p>
     <span>
-      {{ $t('example') }} <a :href="link">{{ link }}</a>
+      {{ $t('example') }}
     </span>
-    <div class="text-h5 py-2">{{ $t('parameters') }}</div>
+    <p v-for="(link, key) in links" :key="key">
+      <v-chip size="small" color="green" variant="flat" class="ma-1"> GET </v-chip>
+      <a :href="link" target="_blank" class="text-decoration-none">{{ link }}</a>
+    </p>
+    <div v-if="parameters.length > 0" class="text-h5 py-2">{{ $t('parameters') }}</div>
     <div v-for="(value, key) in parameters" :key="key">
       <span>{{ value.name }}</span>
       <span class="text-red" v-if="value.isRequired">*</span>
@@ -28,3 +32,9 @@ defineProps<Props>()
     </div>
   </div>
 </template>
+
+<style scoped>
+.font-small {
+  font-size: smaller;
+}
+</style>

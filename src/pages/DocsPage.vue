@@ -9,19 +9,27 @@ const dummyTranslateFunction = (key: string) => key
 const $t = instance?.appContext.config.globalProperties.$t ?? dummyTranslateFunction
 const location = useBrowserLocation()
 
-const latitudeParam: RequestParameter = { name: 'lat', explanation: 'Latitude', isRequired: true }
-const longitudeParam: RequestParameter = { name: 'lng', explanation: 'Longitude', isRequired: true }
+const latitudeParam: RequestParameter = {
+  name: 'lat',
+  explanation: $t('latitudeParam_explanation'),
+  isRequired: true
+}
+const longitudeParam: RequestParameter = {
+  name: 'lng',
+  explanation: $t('longitudeParam_explanation'),
+  isRequired: true
+}
 const dateParam: RequestParameter = {
   name: 'date',
   explanation: $t('dateParam_explanation'),
   isRequired: false,
-  defaultValue: 'Today'
+  defaultValue: $t('dateParam_default')
 }
 const daysParam = {
   name: 'days',
   explanation: $t('daysParam_explanation'),
   isRequired: false,
-  defaultValue: '100'
+  defaultValue: '1'
 }
 const timezoneOffsetParam = {
   name: 'timezoneOffset',
@@ -66,49 +74,55 @@ const endPoints: EndPointProps[] = [
     id: 'timesFromCoordinates',
     title: $t('timesFromCoordinates_title'),
     explanation: $t('timesFromCoordinates_explanation'),
-    link: '/api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey',
+    links: [
+      '/api/timesFromCoordinates?lat=39.91987&lng=32.85427&timezoneOffset=180',
+      '/api/timesFromCoordinates?lat=39.91987&lng=32.85427&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey'
+    ],
     parameters: timesFromCoordinatesParams
   },
   {
     id: 'timesFromPlace',
     title: $t('timesFromPlace_title'),
     explanation: $t('timesFromPlace_explanation'),
-    link: '/api/timesFromPlace?country=Turkey&region=Ankara&city=Ankara&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey',
+    links: [
+      '/api/timesFromPlace?country=Turkey&region=Ankara&city=Ankara&timezoneOffset=180',
+      '/api/timesFromPlace?country=Turkey&region=Ankara&city=Ankara&date=2023-10-29&days=3&timezoneOffset=180&calculationMethod=Turkey'
+    ],
     parameters: timesFromPlaceParams
   },
   {
     id: 'countries',
     title: $t('countries_title'),
     explanation: $t('countries_explanation'),
-    link: '/api/countries',
+    links: ['/api/countries'],
     parameters: []
   },
   {
     id: 'regions',
     title: $t('regions_title'),
     explanation: $t('regions_explanation'),
-    link: '/api/regions?country=Turkey',
+    links: ['/api/regions?country=Turkey'],
     parameters: [countryParam]
   },
   {
     id: 'cities',
     title: $t('cities_title'),
     explanation: $t('cities_explanation'),
-    link: '/api/cities??country=Germany&region=Bayern',
+    links: ['/api/cities??country=Germany&region=Bayern'],
     parameters: [countryParam, regionParam]
   },
   {
     id: 'coordinates',
     title: $t('coordinates_title'),
     explanation: $t('coordinates_explanation'),
-    link: '/api/coordinates?country=Turkey&region=Ankara&city=Ankara',
+    links: ['/api/coordinates?country=Turkey&region=Ankara&city=Ankara'],
     parameters: [countryParam, regionParam, cityParam]
   },
   {
     id: 'place',
     title: $t('place_title'),
     explanation: $t('place_explanation'),
-    link: '/api/place?lat=39.91987&lng=32.85427',
+    links: ['/api/place?lat=39.91987&lng=32.85427'],
     parameters: [latitudeParam, longitudeParam]
   }
 ]
@@ -142,7 +156,7 @@ const tab = ref(location.value.hash ? location.value.hash.split('#') : endPoints
               :id="endPoint.id"
               :title="endPoint.title"
               :explanation="endPoint.explanation"
-              :link="endPoint.link"
+              :links="endPoint.links"
               :parameters="endPoint.parameters"
             />
           </v-card>

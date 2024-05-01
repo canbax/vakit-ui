@@ -13,7 +13,36 @@ export const en = {
   usage: 'API Usage',
   main: '🕌',
   docs: 'Documentation',
-  support: 'Support',
+  support: 'Donate',
   blog: 'Blog',
-  timesFromCoordinates_explanation: 'Calculates time data from GPS coordinates'
+  timesFromCoordinates_title: 'Time from coordinates',
+  timesFromCoordinates_explanation: 'Calculates time data from GPS coordinates',
+  timesFromPlace_title: 'Time from the place',
+  timesFromPlace_explanation: 'Calculates time data from the city, district or region',
+  countries_title: 'List of countries',
+  countries_explanation: 'Returns the list of all countries',
+  regions_title: 'Region list',
+  regions_explanation: 'List of states, provinces or regions belonging to a country',
+  cities_title: 'City list',
+  cities_explanation: 'List of cities belonging to a region',
+  coordinates_title: 'Find coordinates',
+  coordinates_explanation: 'Gives the coordinates of the entered location',
+  place_title: 'Location',
+  place_explanation: 'Gives the location closest to the entered coordinates',
+  dateParam_explanation: 'A date in the pattern YYYY-MM-DD',
+  daysParam_explanation: 'An integer in the range [1, 1000]',
+  timezoneOffsetParam_explanation:
+    'How many minutes difference between the UTC time zone. Should be zero or a negative or positive integer',
+  calculationMethodParam_explanation:
+    'There are different opinions about the angle at which the sun rises and sets. One can choose from the listed: "Turkey", "MuslimWorldLeague", "Egyptian", "Karachi", "UmmAlQura", "Dubai", "MoonsightingCommittee", "NorthAmerica", "Kuwait", "Qatar", "Singapore", "Tehran" ", "Other"',
+  countryParam_explanation: 'English name of the country',
+  regionParam_explanation: 'State, province or region',
+  cityParam_explanation: 'City, district or subregion',
+  latitudeParam_explanation: 'Latitude',
+  longitudeParam_explanation: 'Longitude',
+  dateParam_default: 'Today',
+  example: 'Examples: ',
+  parameters: 'Parameters',
+  supportPageText:
+    'We are trying to provide a free, ad-free but high quality service with Namaz Vakti API. We spend server costs, time and effort. Even a donation of 1 lira will contribute to the continuity and betterment of these services by creating love, enthusiasm and motivation.'
 }
