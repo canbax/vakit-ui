@@ -5,7 +5,7 @@ export const en = {
   default: 'Default',
   adFree: 'Ad-free',
   freeAndLimitlessUsage: 'Free and unlimited usage',
-  adFreeExplanation: 'Without any ads or trackers',
+  adFreeExplanation: 'Without any ads, trackers, or data collection',
   openSource: 'Open-source',
   openSourceExplanation: 'MIT license',
   builtForApp: 'built for app.',
@@ -14,5 +14,6 @@ export const en = {
   main: '🕌',
   docs: 'Documentation',
   support: 'Support',
-  blog: 'Blog'
+  blog: 'Blog',
+  timesFromCoordinates_explanation: 'Calculates time data from GPS coordinates'
 }

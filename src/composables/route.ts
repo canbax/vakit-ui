@@ -35,16 +35,13 @@ export function useRoute(): RouteManager {
     if (!pageToGo) {
       currentView.value = NotFoundPage
       currentPathMenuItem.value = null
-      console.log('currentPathMenuItem.value = null')
     } else {
       currentView.value = pageToGo
       currentPathMenuItem.value = path
-      console.log('currentPathMenuItem.value = path', path)
     }
   }
 
   function setViewFromPathMenuItem(item: string) {
-    console.log('set view from path menu item: ', item)
     if (item === 'main') {
       history.pushState({}, '', '/')
     } else {
