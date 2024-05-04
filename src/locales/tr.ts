@@ -5,7 +5,7 @@ export const tr = {
   default: 'Varsayılan',
   adFree: 'Reklamsız',
   freeAndLimitlessUsage: 'Ücretsiz ve limitsiz kullanım',
-  adFreeExplanation: 'Herhangi bir reklam, izleyici veya veri toplama olmadan',
+  adFreeExplanation: 'İzleyicisiz, veri toplama olmadan',
   openSource: 'Açık Kaynak',
   openSourceExplanation: 'MIT Lisanslı',
   builtForApp: 'uygulaması için oluşturulmuştur',

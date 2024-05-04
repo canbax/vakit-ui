@@ -34,6 +34,7 @@ function openGithub() {
         prepend-icon="mdi-currency-usd-off"
         :subtitle="$t('freeAndLimitlessUsage')"
         :title="$t('free')"
+        width="300"
       >
         <v-card-actions>
           <v-btn
@@ -51,6 +52,7 @@ function openGithub() {
         prepend-icon="mdi-advertisements-off"
         :subtitle="$t('adFreeExplanation')"
         :title="$t('adFree')"
+        width="300"
       >
         <v-card-actions>
           <v-btn
@@ -68,6 +70,7 @@ function openGithub() {
         prepend-icon="mdi-github"
         :subtitle="$t('openSourceExplanation')"
         :title="$t('openSource')"
+        width="300"
       >
         <v-card-actions>
           <v-btn

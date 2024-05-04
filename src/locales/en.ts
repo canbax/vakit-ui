@@ -5,7 +5,7 @@ export const en = {
   default: 'Default',
   adFree: 'Ad-free',
   freeAndLimitlessUsage: 'Free and unlimited usage',
-  adFreeExplanation: 'Without any ads, trackers, or data collection',
+  adFreeExplanation: 'No trackers or data collection',
   openSource: 'Open-source',
   openSourceExplanation: 'MIT license',
   builtForApp: 'built for app.',
