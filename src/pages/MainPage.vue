@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useRoute } from '@/composables/route'
 
-const { setViewFromPathMenuItem } = useRoute()
+const { currentPathMenuItem } = useRoute()
 
 function openDocs() {
-  setViewFromPathMenuItem('docs')
+  currentPathMenuItem.value = 'docs'
 }
 
-function openSupport() {
-  setViewFromPathMenuItem('support')
+function openDonate() {
+  currentPathMenuItem.value = 'donate'
 }
 
 function openGithub() {
@@ -54,12 +54,12 @@ function openGithub() {
       >
         <v-card-actions>
           <v-btn
-            @click="openSupport"
+            @click="openDonate"
             class="px-4"
             variant="elevated"
             append-icon="mdi-hand-heart"
             size="large"
-            >{{ $t('support') }}</v-btn
+            >{{ $t('donate') }}</v-btn
           >
         </v-card-actions>
       </v-card>

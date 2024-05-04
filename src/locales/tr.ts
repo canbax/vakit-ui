@@ -13,7 +13,7 @@ export const tr = {
   usage: 'API Kullanımı',
   main: '🕌',
   docs: 'Dokümantasyon',
-  support: 'Bağış Yap',
+  donate: 'Bağış Yap',
   blog: 'Blog',
   timesFromCoordinates_title: 'Koordinatlardan vakit',
   timesFromCoordinates_explanation: 'GPS koordinatlarından vakit verilerini hesaplar',
@@ -43,6 +43,9 @@ export const tr = {
   dateParam_default: 'Bugün',
   example: 'Örnekler: ',
   parameters: 'Parametreler',
-  supportPageText:
-    'Namaz Vakti API ile ücretsiz, reklamsız ancak yüksek kalitede bir hizmet sunmaya çalışıyoruz. Sunucu masrafları, zaman, emek harcıyoruz. Yapacağınız 1 liralık bir bağış bile aşk, şevk ve motivasyon doğurarak bu hizmetlerimizin devamlılığına ve daha iyi olmasına katkı sağlayacaktır.'
+  donatePageText:
+    'Namaz Vakti API ile ücretsiz, reklamsız ancak yüksek kalitede bir hizmet sunmaya çalışıyoruz. Sunucu masrafları, zaman, emek harcıyoruz. Yapacağınız 1 liralık bir bağış bile aşk, şevk ve motivasyon doğurarak bu hizmetlerimizin devamlılığına ve daha iyi olmasına katkı sağlayacaktır.',
+  isCopied: ' kopyalandı.',
+  transferToBankAccount: 'Banka hesabına transfer',
+  githubSponsorExplanation: 'GitHub üzerinden çalışmalarımız için sponsor olabilirsiniz.'
 }

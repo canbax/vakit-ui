@@ -13,7 +13,7 @@ export const en = {
   usage: 'API Usage',
   main: '🕌',
   docs: 'Documentation',
-  support: 'Donate',
+  donate: 'Donate',
   blog: 'Blog',
   timesFromCoordinates_title: 'Time from coordinates',
   timesFromCoordinates_explanation: 'Calculates time data from GPS coordinates',
@@ -43,6 +43,9 @@ export const en = {
   dateParam_default: 'Today',
   example: 'Examples: ',
   parameters: 'Parameters',
-  supportPageText:
-    'We are trying to provide a free, ad-free but high quality service with Namaz Vakti API. We spend server costs, time and effort. Even a donation of 1 lira will contribute to the continuity and betterment of these services by creating love, enthusiasm and motivation.'
+  donatePageText:
+    'We are trying to provide a free, ad-free but high quality service with Namaz Vakti API. We spend server costs, time and effort. Even a donation of 1 lira will contribute to the continuity and betterment of these services by creating love, enthusiasm and motivation.',
+  isCopied: ' is copied.',
+  transferToBankAccount: 'Transfer to bank account',
+  githubSponsorExplanation: 'You can sponsor our work via GitHub.'
 }

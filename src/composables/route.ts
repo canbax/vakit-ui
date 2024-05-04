@@ -2,7 +2,7 @@ import { shallowRef, watch } from 'vue'
 import { useBrowserLocation } from '@vueuse/core'
 import DocsPage from '@/pages/DocsPage.vue'
 import MainPage from '@/pages/MainPage.vue'
-import SupportPage from '@/pages/SupportPage.vue'
+import DonatePage from '@/pages/DonatePage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
 import BlogPage from '@/pages/BlogPage.vue'
 import type { RouteManager } from '@/types'
@@ -17,10 +17,10 @@ export function useRoute(): RouteManager {
     '': MainPage,
     main: MainPage,
     docs: DocsPage,
-    support: SupportPage,
+    donate: DonatePage,
     blog: BlogPage
   }
-  const pathMenuItems: readonly string[] = ['main', 'docs', 'support'] as const
+  const pathMenuItems: readonly string[] = ['main', 'docs', 'donate'] as const
 
   watch(
     location,
