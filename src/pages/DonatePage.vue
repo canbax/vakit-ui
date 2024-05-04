@@ -27,7 +27,7 @@ function openGitHubSponsors() {
 
   <v-container fluid>
     <v-row align="center" justify="center" class="d-flex">
-      <v-card class="mx-auto" :title="$t('transferToBankAccount')">
+      <v-card class="ma-2 pa-2" :title="$t('transferToBankAccount')" width="400" height="150">
         <v-card-text>
           <div>
             <span> Yusuf Sait Canbaz </span>
@@ -45,7 +45,14 @@ function openGitHubSponsors() {
           </div>
         </v-card-text>
       </v-card>
-      <v-card class="mx-auto" title="GitHub" :link="true" @click="openGitHubSponsors">
+      <v-card
+        class="ma-2 pa-2"
+        title="GitHub"
+        :link="true"
+        @click="openGitHubSponsors"
+        width="400"
+        height="150"
+      >
         <v-card-text> {{ $t('githubSponsorExplanation') }} </v-card-text>
       </v-card>
     </v-row>
