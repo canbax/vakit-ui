@@ -18,7 +18,7 @@ function openGithub() {
 
 <template>
   <div class="bg-green">
-    <v-img class="mx-auto" height="200" src="../src/assets/logo.png">
+    <v-img class="mx-auto" height="200" src="/assets/logo.png">
       <template v-slot:placeholder>
         <div class="d-flex align-center justify-center fill-height">
           <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>
